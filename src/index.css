@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #0F766E;
+    --primary-soft: #E6F4F1;
+    --background: #F8FAFC;
+    --foreground: #0F172A;
+    --muted: #64748B;
+    --emergency: #DC2626;
+    --warning: #B45309;
+    --warning-bg: #FEF3C7;
+    --success: #15803D;
+    --success-bg: #DCFCE7;
+  }
+
+  body {
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--foreground);
+    background-color: var(--background);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom focus ring for WCAG 2.1 AA accessibility */
+*:focus-visible {
+  outline: 2px solid #0F766E;
+  outline-offset: 2px;
+}
+
+/* Accessible animations */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
